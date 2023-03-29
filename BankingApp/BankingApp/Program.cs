@@ -1,5 +1,7 @@
 using BankingApp.Configurations;
+using BankingApp.Contexts;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,8 +25,8 @@ providerCs.DataSource = configuration["trainerservername"];
 providerCs.MultipleActiveResultSets = true;
 providerCs.TrustServerCertificate = false;
 
-//builder.Services.AddDbContext<CatalogContext>(o =>
-//o.UseSqlServer(providerCs.ToString()));
+builder.Services.AddDbContext<CustomerContext>(o =>
+o.UseSqlServer(providerCs.ToString()));
 // Add services to the container.
 builder.Services.AddRazorPages();
 
