@@ -30,5 +30,18 @@ namespace BankingApp.Models
         public string? Password { get; set; }
 
 
+        public Customer(long customerId, string? firstName, string? lastName, long contactNo, string? email, string? password)
+        {
+            CustomerId = customerId;
+            FirstName = firstName;
+            LastName = lastName;
+            ContactNo = contactNo;
+            Email = email;
+            Password = password;
+        }
+
+        public Customer()
+        {
+        }
     }
 }
