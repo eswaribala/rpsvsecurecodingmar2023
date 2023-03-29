@@ -1,5 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+using Steeltoe.Extensions.Configuration.ConfigServer;
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddConfigServer();
 // Add services to the container.
 builder.Services.AddRazorPages();
 
