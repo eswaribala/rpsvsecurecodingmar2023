@@ -1,5 +1,8 @@
 using BankingAPI.Configurations;
 using BankingAPI.Contexts;
+using BankingAPI.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Steeltoe.Extensions.Configuration.ConfigServer;
@@ -28,10 +31,18 @@ providerCs.TrustServerCertificate = false;
 builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(providerCs.ToString()));
 // Add services to the container.
+builder.Services.AddTransient<ICustomerRepo, CustomerRepo>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApiVersioning(x =>
+{
+    x.DefaultApiVersion = new ApiVersion(1, 0);
+    x.AssumeDefaultVersionWhenUnspecified = true;
+    x.ReportApiVersions = true;
+    x.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
+});
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

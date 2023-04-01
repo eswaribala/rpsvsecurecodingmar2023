@@ -72,3 +72,4 @@ G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\refint\BankingAPI
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\BankingAPI.pdb
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\BankingAPI.genruntimeconfig.cache
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\ref\BankingAPI.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
