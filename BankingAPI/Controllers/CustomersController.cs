@@ -1,10 +1,13 @@
-﻿using BankingAPI.Models;
+﻿using BankingAPI.Auth;
+using BankingAPI.Models;
 using BankingAPI.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankingAPI.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     [ApiVersion("1.0")]
     [ApiVersion("1.1")]
     [ApiVersion("2.0")]

@@ -90,9 +90,18 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
+app.UseCors(builder =>
+{
+    builder
+    .WithOrigins("http://localhost:4200", "http://localhost:3000", "http://localhost:7072")
+    .WithMethods("PUT", "DELETE", "GET", "POST")
+    .AllowAnyHeader();
 
+
+});
 app.MapControllers();
 
 app.Run();
