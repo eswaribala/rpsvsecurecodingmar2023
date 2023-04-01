@@ -6,6 +6,11 @@ G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\BankingAPI.runtim
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\BankingAPI.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\BankingAPI.pdb
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Humanizer.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -14,6 +19,8 @@ G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.EntityF
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -72,4 +79,3 @@ G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\refint\BankingAPI
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\BankingAPI.pdb
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\BankingAPI.genruntimeconfig.cache
 G:\Local disk\VSecureCodingMar2023\BankingAPI\obj\Debug\net6.0\ref\BankingAPI.dll
-G:\Local disk\VSecureCodingMar2023\BankingAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll

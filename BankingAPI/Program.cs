@@ -1,11 +1,15 @@
 using BankingAPI.Configurations;
 using BankingAPI.Contexts;
 using BankingAPI.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Steeltoe.Extensions.Configuration.ConfigServer;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddConfigServer();
@@ -30,6 +34,10 @@ providerCs.TrustServerCertificate = false;
 
 builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(providerCs.ToString()));
+
+builder.Services.AddDbContext<IdentityContext>(options => options
+.UseSqlServer(configuration.GetConnectionString("IdentityConn")));
+
 // Add services to the container.
 builder.Services.AddTransient<ICustomerRepo, CustomerRepo>();
 
@@ -42,6 +50,33 @@ builder.Services.AddApiVersioning(x =>
     x.AssumeDefaultVersionWhenUnspecified = true;
     x.ReportApiVersions = true;
     x.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
+});
+// For Identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<IdentityContext>()
+    .AddDefaultTokenProviders();
+
+// Adding Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+
+// Adding Jwt Bearer
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = configuration["JWT:ValidAudience"],
+        ValidIssuer = configuration["JWT:ValidIssuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
+    };
 });
 builder.Services.AddSwaggerGen();
 
