@@ -15,12 +15,92 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp
 build_property._RazorSourceGeneratorDebug = 
 
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Addresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Addresses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkcmVzc2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Addresses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkcmVzc2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Addresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkcmVzc2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Addresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Corporates/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ycG9yYXRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Corporates/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ycG9yYXRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Corporates/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ycG9yYXRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Corporates/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ycG9yYXRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Corporates/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ycG9yYXRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Individuals/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Individuals/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Individuals/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Individuals/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Individuals/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Local disk/VSecureCodingMar2023/BankingApp/BankingApp/Pages/Privacy.cshtml]
