@@ -6,16 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Addresses
+
+namespace BankingApp.Pages.Addresses
 {
     public class EditModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public EditModel(CustomerApp.Contexts.BankingContext context)
+        public EditModel(CustomerContext context)
         {
             _context = context;
         }
@@ -30,7 +29,7 @@ namespace CustomerApp.Pages.Addresses
                 return NotFound();
             }
 
-            var address =  await _context.Addresses.FirstOrDefaultAsync(m => m.Id == id);
+            var address =  await _context.Addresses.FirstOrDefaultAsync(m => m.AddressId == id);
             if (address == null)
             {
                 return NotFound();
@@ -57,7 +56,7 @@ namespace CustomerApp.Pages.Addresses
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AddressExists(Address.Id))
+                if (!AddressExists(Address.AddressId))
                 {
                     return NotFound();
                 }
@@ -72,7 +71,7 @@ namespace CustomerApp.Pages.Addresses
 
         private bool AddressExists(long id)
         {
-          return _context.Addresses.Any(e => e.Id == id);
+          return _context.Addresses.Any(e => e.AddressId == id);
         }
     }
 }

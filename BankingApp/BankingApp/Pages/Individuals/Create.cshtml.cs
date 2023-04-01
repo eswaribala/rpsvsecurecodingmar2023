@@ -5,17 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Individuals
+
+namespace BankingApp.Pages.Individuals
 {
     public class CreateModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
         public List<SelectListItem> GenderList { get; set; }
-        public CreateModel(CustomerApp.Contexts.BankingContext context)
+        public CreateModel(CustomerContext context)
         {
             _context = context;
         }

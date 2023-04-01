@@ -6,16 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Individuals
+
+namespace BankingApp.Pages.Individuals
 {
     public class EditModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public EditModel(CustomerApp.Contexts.BankingContext context)
+        public EditModel(CustomerContext context)
         {
             _context = context;
         }

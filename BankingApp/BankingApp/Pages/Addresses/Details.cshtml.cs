@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Addresses
+
+namespace BankingApp.Pages.Addresses
 {
     public class DetailsModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public DetailsModel(CustomerApp.Contexts.BankingContext context)
+        public DetailsModel(CustomerContext context)
         {
             _context = context;
         }
@@ -28,7 +27,7 @@ namespace CustomerApp.Pages.Addresses
                 return NotFound();
             }
 
-            var address = await _context.Addresses.FirstOrDefaultAsync(m => m.Id == id);
+            var address = await _context.Addresses.FirstOrDefaultAsync(m => m.AddressId == id);
             if (address == null)
             {
                 return NotFound();

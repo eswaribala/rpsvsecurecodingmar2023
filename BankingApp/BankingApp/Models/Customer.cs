@@ -10,7 +10,7 @@ namespace BankingApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         [Column("Customer_Id")]
-        public long? CustomerId { get; set; }
+        public long CustomerId { get; set; }
         [Column("First_Name")]
         [Required]
         [RegularExpression("^[a-zA-Z]{5,25}$",ErrorMessage ="First Name Should be in alphabets within the range of 5,25")]

@@ -9,7 +9,7 @@ namespace BankingApp.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Address_Id")]
-        public long? AddressId { get; set; }
+        public long AddressId { get; set; }
         [Required]
         [Column("Door_No")]
         public string? DoorNo { get; set; }

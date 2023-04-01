@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Individuals
+
+namespace BankingApp.Pages.Individuals
 {
     public class DeleteModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public DeleteModel(CustomerApp.Contexts.BankingContext context)
+        public DeleteModel(CustomerContext context)
         {
             _context = context;
         }

@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Corporates
+
+namespace BankingApp.Pages.Corporates
 {
     public class DetailsModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public DetailsModel(CustomerApp.Contexts.BankingContext context)
+        public DetailsModel(CustomerContext context)
         {
             _context = context;
         }

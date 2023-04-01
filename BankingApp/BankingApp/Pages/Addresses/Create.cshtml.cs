@@ -1,20 +1,21 @@
-﻿using System;
+﻿global using BankingApp.Contexts;
+global using BankingApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
 
-namespace CustomerApp.Pages.Addresses
+
+namespace BankingApp.Pages.Addresses
 {
     public class CreateModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
+        private readonly CustomerContext _context;
 
-        public CreateModel(CustomerApp.Contexts.BankingContext context)
+        public CreateModel(CustomerContext context)
         {
             _context = context;
         }
@@ -22,7 +23,7 @@ namespace CustomerApp.Pages.Addresses
         public IActionResult OnGet()
         {
         ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
-        ViewData["CityId"] = new SelectList(_context.Cities, "Name", "Name");
+      //  ViewData["CityId"] = new SelectList(_context.Cities, "Name", "Name");
             return Page();
         }
 

@@ -5,22 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using CustomerApp.Contexts;
-using CustomerApp.Models;
-using reCAPTCHA.AspNetCore;
-using reCAPTCHA.AspNetCore.Attributes;
 
-namespace CustomerApp.Pages.Customers
+
+
+namespace BankingApp.Pages.Customers
 {
     public class CreateModel : PageModel
     {
-        private readonly CustomerApp.Contexts.BankingContext _context;
-        private readonly IRecaptchaService _recaptcha;
+        private readonly CustomerContext _context;
+       // private readonly IRecaptchaService _recaptcha;
         public string ReturnUrl { get; set; }
-        public CreateModel(CustomerApp.Contexts.BankingContext context,IRecaptchaService recaptcha)
+        public CreateModel(CustomerContext context)
+            //,IRecaptchaService recaptcha)
         {
             _context = context;
-            _recaptcha = recaptcha; 
+          //  _recaptcha = recaptcha; 
         }
 
         public IActionResult OnGet(string returnUrl = null)
@@ -37,10 +36,10 @@ namespace CustomerApp.Pages.Customers
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            var recaptcha = await _recaptcha.Validate(this.HttpContext.Request);
-            if (!recaptcha.success)
+           // var recaptcha = await _recaptcha.Validate(this.HttpContext.Request);
+            //if (!recaptcha.success)
            
-                ModelState.AddModelError("Recaptcha", "Error Validating Captcha");
+            //    ModelState.AddModelError("Recaptcha", "Error Validating Captcha");
               
             //returnUrl ??= Url.Content("~/");
 

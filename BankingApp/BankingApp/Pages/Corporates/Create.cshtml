@@ -18,14 +18,14 @@
                 <table>
                 <tr>
                 @foreach(var Company in Model.CompanyList)
-                {
+                {@*
                     <td>
-                      <label for="@Company.Value">@Company.Text</label>
+                      <label for="@Company">@Company.Text</label>
                     </td>
                     <td>
                         <input id="@Company.Value" type="checkbox" 
                       name="CompanyTypeArr" value="@Company.Value" />
-                    </td>
+                    </td>*@
                 }
                 </tr>
                 </table>
