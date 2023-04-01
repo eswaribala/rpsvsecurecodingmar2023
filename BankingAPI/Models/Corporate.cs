@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BankingAPI.Models
 {
@@ -8,13 +9,14 @@ namespace BankingAPI.Models
     public class Corporate:Customer
     {
         [Required]
+        [Column("CompanyType")]
         public CompanyType CompanyType { get; set; }
 
         public Corporate(CompanyType companyType)
         {
             CompanyType = companyType;
         }
-
+        [JsonConstructor]
         public Corporate(long customerId, string? firstName, string? lastName, long contactNo, string? email, string? password) : base(customerId, firstName, lastName, contactNo, email, password)
         {
         }
