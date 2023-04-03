@@ -13,16 +13,21 @@ namespace BankingApp.Pages_Individuals
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
+        public List<SelectListItem> GenderList { get; set; }
         public CreateModel(BankingApp.Contexts.CustomerContext context)
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text = "MALE", Value = "MALE" });
+            list.Add(new SelectListItem() { Text = "FEMALE", Value = "FEMALE" });
+            list.Add(new SelectListItem() { Text = "TRANSGENDER", Value = "TRANSGENDER" });
+            this.GenderList = list;
             return Page();
         }
+        
 
         [BindProperty]
         public Individual Individual { get; set; } = default!;

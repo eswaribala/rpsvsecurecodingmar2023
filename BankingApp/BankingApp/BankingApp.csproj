@@ -33,6 +33,9 @@
 
   <ItemGroup>
     <Folder Include="Pages\Customers\" />
+    <Folder Include="Pages\Individuals\" />
+    <Folder Include="Pages\Corporates\" />
+    <Folder Include="Pages\Addresses\" />
     <Folder Include="Pages\Shared\Customers\" />
   </ItemGroup>
 
