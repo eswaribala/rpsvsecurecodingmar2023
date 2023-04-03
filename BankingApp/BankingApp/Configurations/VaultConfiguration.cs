@@ -16,8 +16,9 @@ namespace BankingApp.Configurations
         public async Task<Dictionary<string, object>> GetDBCredentials()
         {
             string token = _configuration["trainerrt"];
-            string url = _configuration["url"];
-
+             string url = _configuration["url"];
+           // string token = _configuration["s.7a1lmH5XuRV3LsLbmcVE23fh"];
+           //  string url = _configuration["http://localhost:8200"];
             // Initialize one of the several auth methods.
             IAuthMethodInfo authMethod = new TokenAuthMethodInfo(token);
 

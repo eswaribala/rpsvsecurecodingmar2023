@@ -1,0 +1,6 @@
+dotnet aspnet-codegenerator razorpage  -m Customer -dc CustomerContext -outDir Pages/Customers
+dotnet aspnet-codegenerator razorpage Edit Edit -m Customer -dc CustomerContext -outDir Pages/Customers
+
+--useDefaultLayout or -udl	
+
+dotnet aspnet-codegenerator razorpage  -m Customer -dc CustomerContext  --useDefaultLayout -outDir Pages/Customers

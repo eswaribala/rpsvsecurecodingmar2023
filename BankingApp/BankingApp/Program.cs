@@ -16,7 +16,7 @@ SqlConnectionStringBuilder providerCs = new SqlConnectionStringBuilder();
 providerCs.InitialCatalog = data["vsecuredbname"].ToString();
 providerCs.UserID = data["username"].ToString();
 providerCs.Password = data["password"].ToString();
-//providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2021";
+//providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2022";
 //reading via config server
 providerCs.DataSource = configuration["trainerservername"];
 

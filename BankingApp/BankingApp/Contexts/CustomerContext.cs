@@ -1,5 +1,7 @@
 ﻿using BankingApp.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace BankingApp.Contexts
 {
@@ -27,4 +29,6 @@ namespace BankingApp.Contexts
             modelBuilder.Entity<Address>().ToTable("Address");
         }
     }
+
+    
 }
