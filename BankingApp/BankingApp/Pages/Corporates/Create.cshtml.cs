@@ -13,7 +13,8 @@ namespace BankingApp.Pages_Corporates
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
+        public List<string> CompanyTypeArr { get; set; }
+        public List<SelectListItem> CompanyList { get; set; }
         public CreateModel(BankingApp.Contexts.CustomerContext context)
         {
             _context = context;
@@ -21,6 +22,13 @@ namespace BankingApp.Pages_Corporates
 
         public IActionResult OnGet()
         {
+            List<SelectListItem> Companies = new List<SelectListItem>();
+            Companies.Add(new SelectListItem { Text = "Public", Value = "Public" });
+            Companies.Add(new SelectListItem { Text = "NGO", Value = "NGO" });
+            Companies.Add(new SelectListItem { Text = "Private", Value = "Private" });
+            Companies.Add(new SelectListItem { Text = "MNC", Value = "MNC" });
+            Companies.Add(new SelectListItem { Text = "Government", Value = "Government" });
+            this.CompanyList = Companies;
             return Page();
         }
 

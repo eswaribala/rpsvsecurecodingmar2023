@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BankingApp.Models
 {
-    public enum CompanyType { PUBLIC,PRIVATE,NGO, GOVERNMENT}
+    public enum CompanyType { Public,Private,NGO,MNC, Government}
     [Table("Corporate")]
     public class Corporate:Customer
     {
