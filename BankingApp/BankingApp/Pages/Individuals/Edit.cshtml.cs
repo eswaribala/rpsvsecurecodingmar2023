@@ -14,7 +14,7 @@ namespace BankingApp.Pages_Individuals
     public class EditModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
+        public List<SelectListItem> GenderList { get; set; }
         public EditModel(BankingApp.Contexts.CustomerContext context)
         {
             _context = context;
@@ -35,6 +35,11 @@ namespace BankingApp.Pages_Individuals
             {
                 return NotFound();
             }
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text = "MALE", Value = "MALE" });
+            list.Add(new SelectListItem() { Text = "FEMALE", Value = "FEMALE" });
+            list.Add(new SelectListItem() { Text = "TRANSGENDER", Value = "TRANSGENDER" });
+            this.GenderList = list;
             Individual = individual;
             return Page();
         }

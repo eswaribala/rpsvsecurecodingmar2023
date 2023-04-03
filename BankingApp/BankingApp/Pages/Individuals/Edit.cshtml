@@ -15,7 +15,20 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Individual.Gender" class="control-label"></label>
-                <select asp-for="Individual.Gender" class="form-control"></select>
+                 <table>
+                <tr>
+                @foreach(var Gender in Model.GenderList)
+                {
+                    <td>
+                      <label for="@Gender.Value">@Gender.Text</label>
+                    </td>
+                    <td>
+                        <input id="@Gender.Value" type="radio" 
+                       asp-for="Individual.Gender" value="@Gender.Value" />
+                    </td>
+                }
+                </tr>
+                </table>
                 <span asp-validation-for="Individual.Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
