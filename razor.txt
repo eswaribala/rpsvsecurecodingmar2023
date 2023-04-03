@@ -1,3 +1,4 @@
+dotnet tool install -g dotnet-aspnet-codegenerator
 dotnet aspnet-codegenerator razorpage  -m Customer -dc CustomerContext -outDir Pages/Customers
 dotnet aspnet-codegenerator razorpage Edit Edit -m Customer -dc CustomerContext -outDir Pages/Customers
 
