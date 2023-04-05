@@ -7,20 +7,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BankingApp.Contexts;
 using BankingApp.Models;
+using reCAPTCHA.AspNetCore;
 
 namespace BankingApp.Pages_Customers
 {
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
-        public CreateModel(BankingApp.Contexts.CustomerContext context)
+        private readonly IRecaptchaService _recaptcha;
+        public string ReturnUrl { get; set; }
+        public CreateModel(BankingApp.Contexts.CustomerContext context, IRecaptchaService recaptcha)
         {
             _context = context;
+            _recaptcha = recaptcha;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(string returnUrl = null)
         {
+            ReturnUrl = returnUrl;
             return Page();
         }
 
@@ -31,7 +35,13 @@ namespace BankingApp.Pages_Customers
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Customers == null || Customer == null)
+            var recaptcha = await _recaptcha.Validate(this.HttpContext.Request);
+            if (!recaptcha.success)
+
+                ModelState.AddModelError("Recaptcha", "Error Validating Captcha");
+
+
+            if (!ModelState.IsValid || _context.Customers == null || Customer == null)
             {
                 return Page();
             }
