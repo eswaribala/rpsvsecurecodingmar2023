@@ -1,3 +1,12 @@
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.csproj.AssemblyReference.cache
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.GeneratedMSBuildEditorConfig.editorconfig
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.AssemblyInfoInputs.cache
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.AssemblyInfo.cs
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.csproj.CoreCompileInputs.cache
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.MvcApplicationPartsAssemblyInfo.cs
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.MvcApplicationPartsAssemblyInfo.cache
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.RazorAssemblyInfo.cache
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.RazorAssemblyInfo.cs
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\appsettings.Development.json
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\appsettings.json
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\BankingApp.staticwebassets.runtime.json
@@ -68,6 +77,7 @@ G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\NuGet.
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\NuGet.ProjectModel.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\NuGet.Protocol.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\NuGet.Versioning.dll
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\reCAPTCHA.AspNetCore.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\Steeltoe.Common.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\Steeltoe.Common.Abstractions.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\Steeltoe.Common.Http.dll
@@ -262,15 +272,6 @@ G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\runtim
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.csproj.AssemblyReference.cache
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.GeneratedMSBuildEditorConfig.editorconfig
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.AssemblyInfoInputs.cache
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.AssemblyInfo.cs
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.csproj.CoreCompileInputs.cache
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.MvcApplicationPartsAssemblyInfo.cs
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.MvcApplicationPartsAssemblyInfo.cache
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.RazorAssemblyInfo.cache
-G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.RazorAssemblyInfo.cs
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\staticwebassets.build.json
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\staticwebassets.development.json
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css

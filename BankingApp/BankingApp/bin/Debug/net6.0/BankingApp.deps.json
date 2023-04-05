@@ -23,7 +23,8 @@
           "Swashbuckle.AspNetCore.Swagger": "6.5.0",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
           "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0",
-          "VaultSharp": "1.7.0.4"
+          "VaultSharp": "1.7.0.4",
+          "reCAPTCHA.AspNetCore": "3.0.10"
         },
         "runtime": {
           "BankingApp.dll": {}
@@ -1616,6 +1617,14 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "assemblyVersion": "6.2.1.2",
             "fileVersion": "6.2.1.2"
+          }
+        }
+      },
+      "reCAPTCHA.AspNetCore/3.0.10": {
+        "runtime": {
+          "lib/netcoreapp3.1/reCAPTCHA.AspNetCore.dll": {
+            "assemblyVersion": "3.0.10.0",
+            "fileVersion": "3.0.10.0"
           }
         }
       },
@@ -3352,6 +3361,13 @@
       "sha512": "sha512-+o507LXjsN1YVAgmpqKCQZ70cLsXDoVmR8H0Wgy0muiFnOhkXN2+a6PGFBAIuA7qJch/umTYu1hp7Dlh1Qcrgg==",
       "path": "nuget.versioning/6.2.1",
       "hashPath": "nuget.versioning.6.2.1.nupkg.sha512"
+    },
+    "reCAPTCHA.AspNetCore/3.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MJ3MCMBWr4gd+JZBXyUyT+YOdnMTNlysRrWKne/B/4hSxrpqERxinenvup6hVkQAoPz0DXzzJDujROEQPwohow==",
+      "path": "recaptcha.aspnetcore/3.0.10",
+      "hashPath": "recaptcha.aspnetcore.3.0.10.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

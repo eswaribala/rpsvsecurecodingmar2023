@@ -2,6 +2,7 @@ using BankingApp.Configurations;
 using BankingApp.Contexts;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using reCAPTCHA.AspNetCore;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(providerCs.ToString()));
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddRecaptcha(configuration.GetSection("RecaptchaSettings"));
 
 var app = builder.Build();
 
