@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 namespace BankingApp.Models
 {
@@ -30,5 +31,16 @@ namespace BankingApp.Models
         [Column("CustomerId_FK")]
         public long CustomerId { get; set; }
         public Customer? Customer { get; set; }
+
+        private string? landMark;
+        [StringLength(160)]
+        [DataType(DataType.MultilineText)]
+        [Column("LandMark")]
+        public string? LandMark
+        {
+            get => landMark;
+            set => landMark = Regex.Replace(value, @"[\!\@\$\%\^\&\<\>\?\|\;\[\]\{\~]+", string.Empty);
+           // set => landMark = new HtmlSanitizer().Sanitize(value);
+        }
     }
 }
