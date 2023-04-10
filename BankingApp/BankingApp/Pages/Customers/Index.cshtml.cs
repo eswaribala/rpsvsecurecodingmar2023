@@ -7,26 +7,36 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BankingApp.Contexts;
 using BankingApp.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace BankingApp.Pages_Customers
 {
     public class IndexModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
-        public IndexModel(BankingApp.Contexts.CustomerContext context)
+        private readonly IDataProtector _dataProtector;
+        public IndexModel(BankingApp.Contexts.CustomerContext context, IDataProtector dataProtector)
         {
             _context = context;
+            _dataProtector = dataProtector;
         }
 
         public IList<Customer> Customer { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Customers != null)
+
+            foreach (var cust in _context.Customers)
             {
-                Customer = await _context.Customers.ToListAsync();
+                cust.EncCustomerID = _dataProtector.Protect(cust.CustomerId.ToString());
             }
+
+            Customer = await _context.Customers.ToListAsync();
+
+            //if (_context.Customers != null)
+            //{
+            //    Customer = await _context.Customers.ToListAsync();
+            //}
         }
     }
 }

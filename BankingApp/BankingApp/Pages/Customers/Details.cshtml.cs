@@ -7,16 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BankingApp.Contexts;
 using BankingApp.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace BankingApp.Pages_Customers
 {
     public class DetailsModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
-
-        public DetailsModel(BankingApp.Contexts.CustomerContext context)
+        private readonly IDataProtector _dataProtector;
+        public DetailsModel(BankingApp.Contexts.CustomerContext context,IDataProtector dataProtector)
         {
             _context = context;
+            _dataProtector = dataProtector;
         }
 
       public Customer Customer { get; set; } = default!; 
@@ -28,7 +30,12 @@ namespace BankingApp.Pages_Customers
                 return NotFound();
             }
 
-            var customer = await _context.Customers.FirstOrDefaultAsync(m => m.CustomerId == id);
+
+
+#pragma warning disable CS8604 // Possible null reference argument.
+            var decID = Int64.Parse(_dataProtector.Unprotect(id.ToString()));
+#pragma warning restore CS8604 // Possible null reference argument.
+            var customer = await _context.Customers.FirstOrDefaultAsync(m => m.CustomerId == decID);
             if (customer == null)
             {
                 return NotFound();
