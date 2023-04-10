@@ -1,6 +1,7 @@
 using BankingApp.Configurations;
 using BankingApp.Contexts;
 using BankingApp.Services;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using reCAPTCHA.AspNetCore;
@@ -32,6 +33,7 @@ o.UseSqlServer(providerCs.ToString()));
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEmailReputation, EmailReputation>();
+builder.Services.AddDataProtection();
 builder.Services.AddRecaptcha(configuration.GetSection("RecaptchaSettings"));
 
 var app = builder.Build();

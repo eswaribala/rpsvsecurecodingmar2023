@@ -15,10 +15,10 @@ namespace BankingApp.Pages_Customers
     {
         private readonly BankingApp.Contexts.CustomerContext _context;
         private readonly IDataProtector _dataProtector;
-        public IndexModel(BankingApp.Contexts.CustomerContext context, IDataProtector dataProtector)
+        public IndexModel(BankingApp.Contexts.CustomerContext context, IDataProtectionProvider dataProtectionProvider)
         {
             _context = context;
-            _dataProtector = dataProtector;
+            _dataProtector = dataProtectionProvider.CreateProtector("245435345");
         }
 
         public IList<Customer> Customer { get;set; } = default!;
