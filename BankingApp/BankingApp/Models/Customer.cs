@@ -24,6 +24,7 @@ namespace BankingApp.Models
         [Column("Email")]
         [Required]
         [EmailAddress]
+        [ReputableEmail]
         public string? Email { get; set; }
         [Column("Password")]
         [Required]

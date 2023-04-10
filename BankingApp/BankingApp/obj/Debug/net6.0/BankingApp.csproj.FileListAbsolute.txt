@@ -283,3 +283,7 @@ G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\refint
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.pdb
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\BankingApp.genruntimeconfig.cache
 G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\obj\Debug\net6.0\ref\BankingApp.dll
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\AngleSharp.dll
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\AngleSharp.Css.dll
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\HtmlSanitizer.dll
+G:\Local disk\VSecureCodingMar2023\BankingApp\BankingApp\bin\Debug\net6.0\System.Collections.Immutable.dll

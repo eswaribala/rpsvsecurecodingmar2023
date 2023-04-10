@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Ganss.Xss;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
@@ -39,8 +40,8 @@ namespace BankingApp.Models
         public string? LandMark
         {
             get => landMark;
-            set => landMark = Regex.Replace(value, @"[\!\@\$\%\^\&\<\>\?\|\;\[\]\{\~]+", string.Empty);
-           // set => landMark = new HtmlSanitizer().Sanitize(value);
+           // set => landMark = Regex.Replace(value, @"[\!\@\$\%\^\&\<\>\?\|\;\[\]\{\~]+", string.Empty);
+           set => landMark = new HtmlSanitizer().Sanitize(value);
         }
     }
 }

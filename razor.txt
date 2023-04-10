@@ -5,3 +5,6 @@ dotnet aspnet-codegenerator razorpage Edit Edit -m Customer -dc CustomerContext 
 --useDefaultLayout or -udl	
 
 dotnet aspnet-codegenerator razorpage  -m Customer -dc CustomerContext  --useDefaultLayout -outDir Pages/Customers
+
+
+dotnet aspnet-codegenerator identity --files="Account.AccessDenied;Account.ConfirmEmail;Account.ExternalLogin;Account.ForgotPassword;Account.ForgotPasswordConfirmation;Account.Lockout;Account.Login;Account.LoginWith2fa;Account.LoginWithRecoveryCode;Account.Logout;Account.Manage._Layout;Account.Manage._ManageNav;Account.Manage._StatusMessage;Account.Manage.ChangePassword;Account.Manage.DeletePersonalData;Account.Manage.Disable2fa;Account.Manage.DownloadPersonalData;Account.Manage.EnableAuthenticator;Account.Manage.ExternalLogins;Account.Manage.GenerateRecoveryCodes;Account.Manage.Index;Account.Manage.PersonalData;Account.Manage.ResetAuthenticator;Account.Manage.SetPassword;Account.Manage.TwoFactorAuthentication;Account.Register;Account.ResetPassword;Account.ResetPasswordConfirmation"
