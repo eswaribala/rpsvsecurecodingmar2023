@@ -8,9 +8,11 @@ using reCAPTCHA.AspNetCore;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 using Microsoft.AspNetCore.Identity;
 using BankingApp.Areas.Identity.Data;
+using BankingApp.Areas.Identity;
+using BankingApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BankingAppIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'BankingAppIdentityDbContextConnection' not found.");
+//var connectionString = builder.Configuration.GetConnectionString("BankingAppIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'BankingAppIdentityDbContextConnection' not found.");
 builder.Configuration.AddConfigServer();
 ConfigurationManager configuration = builder.Configuration;
 
@@ -61,9 +63,20 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<BankingAppIdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddDefaultUI();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;   
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEmailReputation, EmailReputation>();
+builder.Services.AddSingleton<IPasswordHasher<Customer>, PasswordHasher>();
 builder.Services.AddDataProtection();
 builder.Services.AddRecaptcha(configuration.GetSection("RecaptchaSettings"));
 
