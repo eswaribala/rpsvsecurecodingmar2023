@@ -6,8 +6,11 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using reCAPTCHA.AspNetCore;
 using Steeltoe.Extensions.Configuration.ConfigServer;
+using Microsoft.AspNetCore.Identity;
+using BankingApp.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("BankingAppIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'BankingAppIdentityDbContextConnection' not found.");
 builder.Configuration.AddConfigServer();
 ConfigurationManager configuration = builder.Configuration;
 
@@ -30,6 +33,34 @@ providerCs.TrustServerCertificate = false;
 
 builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(providerCs.ToString()));
+
+SqlConnectionStringBuilder providerIdentityCs = new SqlConnectionStringBuilder();
+//reading from Vault server
+providerIdentityCs.InitialCatalog = data["vsecureidentitydbname"].ToString();
+providerIdentityCs.UserID = data["username"].ToString();
+providerIdentityCs.Password = data["password"].ToString();
+//providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2022";
+//reading via config server
+providerIdentityCs.DataSource = configuration["trainerservername"];
+
+//providerCs.UserID = CryptoService2.Decrypt(ConfigurationManager.
+//AppSettings["UserId"]);
+providerIdentityCs.MultipleActiveResultSets = true;
+providerIdentityCs.TrustServerCertificate = false;
+
+
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+// .AddEntityFrameworkStores<BankingAppIdentityDbContext>();
+
+builder.Services.AddDbContext<BankingAppIdentityDbContext>(o =>
+o.UseSqlServer(providerIdentityCs.ToString()));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = false;
+})
+    .AddEntityFrameworkStores<BankingAppIdentityDbContext>()
+    .AddDefaultTokenProviders()
+    .AddDefaultUI();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEmailReputation, EmailReputation>();
@@ -50,6 +81,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
