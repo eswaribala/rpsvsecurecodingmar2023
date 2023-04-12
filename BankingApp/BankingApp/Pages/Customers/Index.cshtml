@@ -50,11 +50,11 @@
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                 $tr.append($('<td>').append("<a href='/Customers/Details?id=@item.EncCustomerID'>See Details</a>"));
+                <a href='/Customers/Details?id=@item.EncCustomerID'>See Details</a>
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CustomerId">Details</a> |
+                <a asp-page="./Details" asp-route-id="@item.EncCustomerID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.CustomerId">Delete</a>
             </td>
         </tr>

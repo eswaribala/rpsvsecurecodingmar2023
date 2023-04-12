@@ -18,7 +18,7 @@ namespace BankingApp.Pages_Customers
         public IndexModel(BankingApp.Contexts.CustomerContext context, IDataProtectionProvider dataProtectionProvider)
         {
             _context = context;
-            _dataProtector = dataProtectionProvider.CreateProtector("245435345");
+            _dataProtector = dataProtectionProvider.CreateProtector("");
         }
 
         public IList<Customer> Customer { get;set; } = default!;

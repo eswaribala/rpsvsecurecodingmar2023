@@ -18,12 +18,12 @@ namespace BankingApp.Pages_Customers
         public DetailsModel(BankingApp.Contexts.CustomerContext context,IDataProtectionProvider dataProtectionProvider)
         {
             _context = context;
-           _dataProtector = dataProtectionProvider.CreateProtector("245435345");
+           _dataProtector = dataProtectionProvider.CreateProtector("");
         }
 
       public Customer Customer { get; set; } = default!; 
 
-        public async Task<IActionResult> OnGetAsync(long? id)
+        public async Task<IActionResult> OnGetAsync(string? id)
         {
             if (id == null || _context.Customers == null)
             {
@@ -33,7 +33,7 @@ namespace BankingApp.Pages_Customers
 
 
 #pragma warning disable CS8604 // Possible null reference argument.
-            var decID = Int64.Parse(_dataProtector.Unprotect(id.ToString()));
+            var decID = Convert.ToInt64(_dataProtector.Unprotect(id));
 #pragma warning restore CS8604 // Possible null reference argument.
             var customer = await _context.Customers.FirstOrDefaultAsync(m => m.CustomerId == decID);
             if (customer == null)
