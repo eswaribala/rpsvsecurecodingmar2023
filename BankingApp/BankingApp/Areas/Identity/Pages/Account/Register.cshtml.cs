@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using BankingApp.Models;
+using BankingApp.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -29,13 +31,13 @@ namespace BankingApp.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-
+        private readonly ICryptoService _cryptoService;
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, ICryptoService cryptoService)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +45,7 @@ namespace BankingApp.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _cryptoService = cryptoService;
         }
 
         /// <summary>
@@ -70,6 +73,28 @@ namespace BankingApp.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+            [Display(Name = "First Name")]
+            [StringLength(60, MinimumLength = 3)]
+            [Required]
+            public string FirstName { get; set; }
+
+            [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+            [Display(Name = "Middle Name")]
+            [StringLength(60, MinimumLength = 3)]
+            [Required]
+            public string MiddleName { get; set; }
+
+            [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+            [Display(Name = "Last Name")]
+            [StringLength(60, MinimumLength = 3)]
+            [Required]
+            public string LastName { get; set; }
+
+            [Required]
+            [DisplayFormat(DataFormatString = "{mm/dd/yyyy}")]
+            [DataType(DataType.Date)]
+            public DateTime DateOfBirth { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -112,10 +137,20 @@ namespace BankingApp.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                //  var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                // await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                //  await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
+                var user = new CustomerIdentity
+                {
+                    FirstName = _cryptoService.Encrypt(Input.FirstName, Environment.GetEnvironmentVariable("securekey", EnvironmentVariableTarget.Machine)),
+                    MiddleName = _cryptoService.Encrypt(Input.MiddleName, Environment.GetEnvironmentVariable("securekey", EnvironmentVariableTarget.Machine)),
+                    LastName = _cryptoService.Encrypt(Input.LastName, Environment.GetEnvironmentVariable("securekey", EnvironmentVariableTarget.Machine)),
+                    DateOfBirth = Input.DateOfBirth,
+                    UserName = Input.Email,
+                    Email = Input.Email
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
