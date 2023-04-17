@@ -77,6 +77,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEmailReputation, EmailReputation>();
 builder.Services.AddSingleton<IPasswordHasher<Customer>, PasswordHasher>();
+builder.Services.AddScoped<IPasswordHasher<IdentityUser>, BCryptPasswordHasher<IdentityUser>>();
+
 builder.Services.AddDataProtection();
 builder.Services.AddRecaptcha(configuration.GetSection("RecaptchaSettings"));
 
