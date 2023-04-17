@@ -1,3 +1,4 @@
+using BankingApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ public class BankingAppIdentityDbContext : IdentityDbContext<IdentityUser>
     {
         this.Database.EnsureCreated();
     }
-
+    public DbSet<CustomerIdentity> CustomerIdentity { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
