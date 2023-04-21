@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace BankingApp.Pages_Customers
 {
     [Authorize(Roles = "Customer")]
-    [Authorize(Roles = "ActiveCustomer")]
+    [Authorize(Roles = "PendingCustomer")]
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;

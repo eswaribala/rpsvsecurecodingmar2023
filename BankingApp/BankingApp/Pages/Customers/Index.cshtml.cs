@@ -20,7 +20,8 @@ namespace BankingApp.Pages_Customers
             _context = context;
             _dataProtector = dataProtectionProvider.CreateProtector("");
         }
-
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
         public IList<Customer> Customer { get;set; } = default!;
 
         public async Task OnGetAsync()

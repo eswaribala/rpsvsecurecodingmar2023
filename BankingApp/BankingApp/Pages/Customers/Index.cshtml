@@ -10,7 +10,20 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Search in Notes <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
+    @{
+     if(Model.SearchString is not null){
+             <h2>Your searched for
+            @Model.SearchString returned
+             @Model.Customer.Count results</h2>
+        }
+      }
     <thead>
         <tr>
             <th>
