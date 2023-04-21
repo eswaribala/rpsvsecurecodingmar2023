@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using BankingApp.Areas.Identity.Data;
 using BankingApp.Areas.Identity;
 using BankingApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 //var connectionString = builder.Configuration.GetConnectionString("BankingAppIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'BankingAppIdentityDbContextConnection' not found.");
@@ -81,6 +82,16 @@ builder.Services.AddScoped<IPasswordHasher<IdentityUser>, BCryptPasswordHasher<I
 builder.Services.AddScoped<ICryptoService,CryptoService>();
 builder.Services.AddDataProtection();
 builder.Services.AddRecaptcha(configuration.GetSection("RecaptchaSettings"));
+builder.Services.AddMvc(options =>
+{
+    options.CacheProfiles.Add("NoCache",
+        new CacheProfile()
+        {
+            Duration = 30,
+            Location = ResponseCacheLocation.None,
+            NoStore = true
+        });
+});
 
 var app = builder.Build();
 
