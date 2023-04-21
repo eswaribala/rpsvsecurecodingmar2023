@@ -17,7 +17,7 @@ namespace BankingApp.Contexts
         public DbSet<Individual> Individuals { get; set; }
         public DbSet<Corporate> Corporates { get; set; }
         public DbSet<Address> Addresses { get; set; }
-
+        public DbSet<Loan> Loans { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,7 @@ namespace BankingApp.Contexts
             modelBuilder.Entity<Individual>().ToTable("Individual");
             modelBuilder.Entity<Corporate>().ToTable("Corporate");
             modelBuilder.Entity<Address>().ToTable("Address");
+            modelBuilder.Entity<Loan>().ToTable("Loan");
         }
     }
 
