@@ -32,17 +32,20 @@ namespace BankingApp.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly ICryptoService _cryptoService;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender, ICryptoService cryptoService)
+            IEmailSender emailSender, ICryptoService cryptoService,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _logger = logger;
             _emailSender = emailSender;
             _cryptoService = cryptoService;
@@ -155,6 +158,29 @@ namespace BankingApp.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    if (!await _roleManager.RoleExistsAsync(Role.Customer))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(Role.Customer));
+                    }
+
+                    if (!await _roleManager.RoleExistsAsync(Role.ActiveCustomer))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(Role.ActiveCustomer));
+                    }
+
+                    if (!await _roleManager.RoleExistsAsync(Role.PendingCustomer))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(Role.PendingCustomer));
+                    }
+
+                    if (!await _roleManager.RoleExistsAsync(Role.SuspendedCustomer))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(Role.SuspendedCustomer));
+                    }
+
+                    await _userManager.AddToRoleAsync(user, Role.Customer);
+                    await _userManager.AddToRoleAsync(user, Role.PendingCustomer);
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);

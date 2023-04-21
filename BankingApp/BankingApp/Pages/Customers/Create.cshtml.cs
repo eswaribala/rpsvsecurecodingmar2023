@@ -8,9 +8,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using BankingApp.Contexts;
 using BankingApp.Models;
 using reCAPTCHA.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BankingApp.Pages_Customers
 {
+    [Authorize(Roles = "Customer")]
+    [Authorize(Roles = "ActiveCustomer")]
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Contexts.CustomerContext _context;

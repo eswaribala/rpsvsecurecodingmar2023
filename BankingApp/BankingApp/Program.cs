@@ -61,6 +61,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
     options.User.RequireUniqueEmail = false;
 })
+     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<BankingAppIdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddDefaultUI();
