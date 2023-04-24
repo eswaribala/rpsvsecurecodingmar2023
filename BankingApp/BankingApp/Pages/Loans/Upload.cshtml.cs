@@ -23,7 +23,7 @@ namespace BankingApp.Pages.Loans
         public async Task OnPostAsync()
         {
             Loan emptyLoan = null;
-            var file = Path.Combine(_environment.ContentRootPath, "uploads", Upload.FileName);
+            var file = Path.GetFileName(Upload.FileName);
 
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
