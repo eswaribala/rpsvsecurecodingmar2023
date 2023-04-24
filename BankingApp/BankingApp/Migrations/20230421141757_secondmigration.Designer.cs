@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankingApp.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    [Migration("20230329123723_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20230421141757_secondmigration")]
+    partial class secondmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,12 +26,12 @@ namespace BankingApp.Migrations
 
             modelBuilder.Entity("BankingApp.Models.Address", b =>
                 {
-                    b.Property<long?>("AddressId")
+                    b.Property<long>("AddressId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasColumnName("Address_Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("AddressId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("AddressId"), 1L, 1);
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -52,6 +52,11 @@ namespace BankingApp.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Door_No");
 
+                    b.Property<string>("LandMark")
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)")
+                        .HasColumnName("LandMark");
+
                     b.Property<long?>("PinCode")
                         .IsRequired()
                         .HasColumnType("bigint")
@@ -71,12 +76,12 @@ namespace BankingApp.Migrations
 
             modelBuilder.Entity("BankingApp.Models.Customer", b =>
                 {
-                    b.Property<long?>("CustomerId")
+                    b.Property<long>("CustomerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasColumnName("Customer_Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("CustomerId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("CustomerId"), 1L, 1);
 
                     b.Property<long?>("ContactNo")
                         .IsRequired()
@@ -107,11 +112,45 @@ namespace BankingApp.Migrations
                     b.ToTable("Customer", (string)null);
                 });
 
+            modelBuilder.Entity("BankingApp.Models.Loan", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("CustomerId")
+                        .HasColumnType("bigint")
+                        .HasColumnName("CustomerId_FK");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PeriodInMonths")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("TransactionDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Loan", (string)null);
+                });
+
             modelBuilder.Entity("BankingApp.Models.Corporate", b =>
                 {
                     b.HasBaseType("BankingApp.Models.Customer");
 
-                    b.Property<int>("CompanType")
+                    b.Property<int>("CompanyType")
                         .HasColumnType("int");
 
                     b.ToTable("Corporate", (string)null);
@@ -133,6 +172,17 @@ namespace BankingApp.Migrations
                 });
 
             modelBuilder.Entity("BankingApp.Models.Address", b =>
+                {
+                    b.HasOne("BankingApp.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("BankingApp.Models.Loan", b =>
                 {
                     b.HasOne("BankingApp.Models.Customer", "Customer")
                         .WithMany()
