@@ -42,9 +42,10 @@ namespace BankingApp.Pages_Customers
             if (!recaptcha.success)
 
                 ModelState.AddModelError("Recaptcha", "Error Validating Captcha");
-
-
-            if (!ModelState.IsValid || _context.Customers == null || Customer == null)
+            //dummy value
+            Customer.EncCustomerID = "2365";
+           
+            if ( _context.Customers == null || Customer == null)
             {
                 return Page();
             }

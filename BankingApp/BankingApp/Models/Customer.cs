@@ -13,6 +13,7 @@ namespace BankingApp.Models
         public long CustomerId { get; set; }
 
         [NotMapped]
+        
         public string EncCustomerID { get; set; }
 
         [Column("First_Name")]

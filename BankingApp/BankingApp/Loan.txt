@@ -1,0 +1,11 @@
+﻿{
+  "id":0,
+  "customerId":1,
+  "amount":43768,
+  "periodInMonths":60,
+  "transactionDate":"2023-02-21",
+  "loanStatus":"Approved",
+  "note":"Emailed"
+
+
+}

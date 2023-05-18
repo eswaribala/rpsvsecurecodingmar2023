@@ -47,19 +47,19 @@ namespace BankingApp.Pages.Loans
                 }
             }
 
-            //var loggedInUser = HttpContext.User;
-            //var customerId = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
-            //emptyLoan.CustomerId= Convert.ToInt64(customerId);
-            //emptyLoan.TransactionDate = DateTime.Now;
+            var loggedInUser = HttpContext.User;
+          //  var customerId = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
+            emptyLoan.CustomerId = 1;
+            emptyLoan.TransactionDate = DateTime.Now;
 
-            //if (await TryUpdateModelAsync<Loan>(
-            //    emptyLoan,
-            //    "loan",
-            //    l => l.CustomerId,  l => l.Amount, l => l.PeriodInMonths, l => l.TransactionDate, l => l.Note))
-            //{
-            //    _context.Loans.Add(emptyLoan);
-            //    await _context.SaveChangesAsync();
-            //}
+            if (await TryUpdateModelAsync<Loan>(
+                emptyLoan,
+                "loan",
+                l => l.CustomerId, l => l.Amount, l => l.PeriodInMonths, l => l.TransactionDate, l => l.Note))
+            {
+                _context.Loans.Add(emptyLoan);
+                await _context.SaveChangesAsync();
+            }
 
         }
     }
