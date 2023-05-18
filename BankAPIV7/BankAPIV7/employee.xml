@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Employees>
+<Employee>
+  <SSN>737333333</SSN> 
+  <Name>ED HARRIS</Name> 
+  <DateOfBirth>1960-01-01</DateOfBirth> 
+  <EmployeeType>FULLTIME</EmployeeType> 
+  <Salary>4000</Salary> 
+  </Employee>
+  <Employee>
+    <SSN>737333334</SSN>
+    <Name>Parameswari</Name>
+    <DateOfBirth>1970-12-02</DateOfBirth>
+    <EmployeeType>FULLTIME</EmployeeType>
+    <Salary>40000</Salary>
+  </Employee>
+  <Employee>
+    <SSN>737333335</SSN>
+    <Name>Akhlesh</Name>
+    <DateOfBirth>2000-01-01</DateOfBirth>
+    <EmployeeType>FULLTIME</EmployeeType>
+    <Salary>700000</Salary>
+  </Employee>
+</Employees>
