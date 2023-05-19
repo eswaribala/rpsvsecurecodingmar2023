@@ -59,6 +59,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.DirectoryServices": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             }
           },
           "imports": [

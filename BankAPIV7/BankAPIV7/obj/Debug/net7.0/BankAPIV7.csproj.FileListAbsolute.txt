@@ -31,3 +31,15 @@ G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\obj\Debug\net7.0\refint\B
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\obj\Debug\net7.0\BankAPIV7.pdb
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\obj\Debug\net7.0\BankAPIV7.genruntimeconfig.cache
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\obj\Debug\net7.0\ref\BankAPIV7.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.DirectoryServices.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.Drawing.Common.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.Security.Permissions.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.Windows.Extensions.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
