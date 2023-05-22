@@ -7,6 +7,7 @@ namespace BankAPIV7.Services
     public class FileService : IFileService
     {
         private readonly IConfiguration _configuration;
+        private readonly ILogger<FileService> _logger;
 
         private const string UploadsSubDirectory = "VFilesUploaded";
 
@@ -14,9 +15,10 @@ namespace BankAPIV7.Services
         private readonly IEnumerable<string> allowedExtensions = 
             new List<string> { ".zip", ".bin", ".png", ".jpg",".xlsx",".docx" };
 
-        public FileService(IConfiguration configuration)
+        public FileService(IConfiguration configuration, ILogger<FileService> logger)
         {
-            this._configuration = configuration;    
+            this._configuration = configuration;
+            _logger = logger;
         }
 
 
@@ -45,6 +47,7 @@ namespace BankAPIV7.Services
                 section = await multipartReader.ReadNextSectionAsync();
             }
 
+            _logger.LogInformation($"File Count {fileCount}");
             return new FileUploadSummary
             {
                 TotalFilesUploaded = fileCount,

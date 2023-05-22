@@ -10,10 +10,12 @@ namespace BankAPIV7.Controllers
     public class FilesController : ControllerBase
     {
         private readonly IFileService fileService;
+        private readonly ILogger<FilesController> _logger;
 
-        public FilesController(IFileService fileService)
+        public FilesController(IFileService fileService, ILogger<FilesController> logger)
         {
             this.fileService = fileService;
+            _logger = logger;
         }
 
 
@@ -24,8 +26,10 @@ namespace BankAPIV7.Controllers
         [DisableFormValueModelBinding]
         public async Task<IActionResult> Upload()
         {
+            Random random = new Random();
+            var randomValue = random.Next(0, 1000);
             var fileUploadSummary = await fileService.UploadFileAsync(HttpContext.Request.Body, Request.ContentType);
-
+            _logger.LogInformation($"Random Value is {randomValue}");
             return CreatedAtAction(nameof(Upload), fileUploadSummary);
         }
 
