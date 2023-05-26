@@ -25,10 +25,6 @@ namespace BankAPIV7.Services
 
             }
 
-
-
-
-
              XmlReaderSettings settings = new XmlReaderSettings();
              settings.ValidationType = ValidationType.Schema;
              settings.Schemas = schemaSet;
