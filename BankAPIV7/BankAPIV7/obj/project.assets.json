@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "Audit.NET/21.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Audit.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Audit.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Elasticsearch.Net/7.17.5": {
         "type": "package",
         "dependencies": {
@@ -964,6 +977,35 @@
     }
   },
   "libraries": {
+    "Audit.NET/21.0.0": {
+      "sha512": "u4Yv0UtqELIyGBKBXlCZFXcWSTP8eVv6xCzFKqoQ96kVkoK989cBmu5ahVWtaL0IFJB38R9nN8xmDSQoMj+xgg==",
+      "type": "package",
+      "path": "audit.net/21.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE/LICENSE",
+        "audit.net.21.0.0.nupkg.sha512",
+        "audit.net.nuspec",
+        "icon.png",
+        "lib/net45/Audit.NET.dll",
+        "lib/net45/Audit.NET.xml",
+        "lib/net461/Audit.NET.dll",
+        "lib/net461/Audit.NET.xml",
+        "lib/net5.0/Audit.NET.dll",
+        "lib/net5.0/Audit.NET.xml",
+        "lib/net6.0/Audit.NET.dll",
+        "lib/net6.0/Audit.NET.xml",
+        "lib/net7.0/Audit.NET.dll",
+        "lib/net7.0/Audit.NET.xml",
+        "lib/netstandard1.3/Audit.NET.dll",
+        "lib/netstandard1.3/Audit.NET.xml",
+        "lib/netstandard2.0/Audit.NET.dll",
+        "lib/netstandard2.0/Audit.NET.xml",
+        "lib/netstandard2.1/Audit.NET.dll",
+        "lib/netstandard2.1/Audit.NET.xml"
+      ]
+    },
     "Elasticsearch.Net/7.17.5": {
       "sha512": "orChsQi1Ceho/NyIylNOn6y4vuGcsbCfMZnCueNN0fzqYEGQmQdPfcVmsR5+3fwpXTgxCdjTUVmqOwvHpCSB+Q==",
       "type": "package",
@@ -2617,6 +2659,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Audit.NET >= 21.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.2",
       "Serilog >= 2.12.0",
@@ -2678,6 +2721,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Audit.NET": {
+            "target": "Package",
+            "version": "[21.0.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.5, )"

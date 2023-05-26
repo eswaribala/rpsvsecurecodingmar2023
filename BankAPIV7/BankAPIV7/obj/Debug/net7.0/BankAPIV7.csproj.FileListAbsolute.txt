@@ -59,3 +59,4 @@ G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Serilog.
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Serilog.Sinks.Elasticsearch.dll
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Serilog.Sinks.File.dll
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Audit.NET.dll

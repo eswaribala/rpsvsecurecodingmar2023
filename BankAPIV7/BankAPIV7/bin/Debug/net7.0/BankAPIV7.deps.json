@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "BankAPIV7/1.0.0": {
         "dependencies": {
+          "Audit.NET": "21.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.2",
           "Serilog": "2.12.0",
@@ -21,6 +22,14 @@
         },
         "runtime": {
           "BankAPIV7.dll": {}
+        }
+      },
+      "Audit.NET/21.0.0": {
+        "runtime": {
+          "lib/net7.0/Audit.NET.dll": {
+            "assemblyVersion": "21.0.0.0",
+            "fileVersion": "21.0.0.0"
+          }
         }
       },
       "Elasticsearch.Net/7.17.5": {
@@ -496,6 +505,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Audit.NET/21.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u4Yv0UtqELIyGBKBXlCZFXcWSTP8eVv6xCzFKqoQ96kVkoK989cBmu5ahVWtaL0IFJB38R9nN8xmDSQoMj+xgg==",
+      "path": "audit.net/21.0.0",
+      "hashPath": "audit.net.21.0.0.nupkg.sha512"
     },
     "Elasticsearch.Net/7.17.5": {
       "type": "package",
