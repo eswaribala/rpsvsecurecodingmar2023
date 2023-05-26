@@ -12,15 +12,16 @@ namespace BankAPIV7.Services
         {
             string sanitizedInput = Sanitize(input);
             List<Employee> employees = new List<Employee>();
-            var schemaSet = new XmlSchemaSet();
+            XmlSchemaSet? schemaSet = new XmlSchemaSet();
             var xsdFile = System.IO.Path.Combine("employee.xsd");
-            using (System.IO.FileStream stream = File.OpenRead(xsdFile))
+            FileStream stream = File.OpenRead(xsdFile);
+            XmlSchema? sreader=XmlSchema.Read(stream, (s, e) =>
             {
-                schemaSet.Add(XmlSchema.Read(stream, (s, e) =>
-                {
-                    var x = e.Message;
-                }));
-            }
+                var x = e.Message;
+            });
+            schemaSet.Add(sreader);
+
+
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.ValidationType = ValidationType.Schema;
