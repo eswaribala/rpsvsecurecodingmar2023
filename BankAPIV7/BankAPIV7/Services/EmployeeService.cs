@@ -1,5 +1,7 @@
 ﻿using BankAPIV7.Models;
+using Microsoft.AspNetCore;
 using System.Xml;
+using System.Xml.Schema;
 using System.Xml.XPath;
 
 namespace BankAPIV7.Services
@@ -10,9 +12,28 @@ namespace BankAPIV7.Services
         {
             string sanitizedInput = Sanitize(input);
             List<Employee> employees = new List<Employee>();
+            var schemaSet = new XmlSchemaSet();
+            var xsdFile = System.IO.Path.Combine("employee.xsd");
+            using (System.IO.FileStream stream = File.OpenRead(xsdFile))
+            {
+                schemaSet.Add(XmlSchema.Read(stream, (s, e) =>
+                {
+                    var x = e.Message;
+                }));
+            }
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.ValidationType = ValidationType.Schema;
+            settings.Schemas = schemaSet;
+            settings.DtdProcessing = DtdProcessing.Parse;
+
             var file = System.IO.Path.Combine("employee.xml");
-            XmlDocument XmlDoc = new XmlDocument();
-            XmlDoc.Load(file);
+            XmlReader reader = XmlReader.Create(file, settings);
+            XmlDocument XmlDoc = new XmlDocument()
+            {
+                XmlResolver = null
+            };
+            XmlDoc.Load(reader);
             //vulnerability test
             XPathNavigator? nav = XmlDoc.CreateNavigator();
             XPathExpression? expr = nav.Compile(@"//Employee[Name[contains(text(),'" + sanitizedInput + "')]]");
