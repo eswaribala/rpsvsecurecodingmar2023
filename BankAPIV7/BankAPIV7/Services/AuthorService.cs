@@ -21,7 +21,7 @@ namespace BankAPIV7.Services
             XmlReader reader = XmlReader.Create(file,settings);
             XDocument xmlDoc = XDocument.Load(reader);
 
-            var query = from i in xmlDoc.Element("authors").Elements("author")
+            var query = from i in xmlDoc.Element("Authors").Elements("author")
                         where
                           i.Element("name").ToString().Contains(input) == true
                         select new
