@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.Configure<LdapConfig>(configuration.GetSection("Ldap"));
 builder.Services.AddScoped<ILdapService, LdapService>();
 Log.Logger = new LoggerConfiguration()
