@@ -1,12 +1,13 @@
 ﻿using BankAPIV7.Models;
 using Microsoft.Extensions.Options;
 using System.DirectoryServices;
-
+using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
 
 
 namespace BankAPIV7.Services
 {
+    [SupportedOSPlatform("windows")]
     public class LdapService:ILdapService
     {
         private const string EmailAttribute = "mail";
