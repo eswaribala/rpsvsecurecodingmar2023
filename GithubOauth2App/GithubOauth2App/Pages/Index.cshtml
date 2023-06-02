@@ -8,3 +8,8 @@
 {
     <a asp-action="Login" asp-controller="Auth" class="btn btn-outline-primary">Log In with GitHub</a>
 }
+else
+{
+    <p>Welcome Back</p>
+    <h1>@Model.AccessToken</h1>
+}

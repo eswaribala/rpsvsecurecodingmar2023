@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Octokit;
 
 namespace GithubOauth2App.Pages
 {
@@ -7,14 +9,19 @@ namespace GithubOauth2App.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        public string? AccessToken { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                AccessToken = await HttpContext.GetTokenAsync("access_token");
+            }
         }
     }
 }
