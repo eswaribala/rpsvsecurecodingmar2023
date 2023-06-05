@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceDemo";
+
+package customer;
+
+service CustomerProcess{
+	rpc AddCustomer(AddRequest) returns (ShowResponse);
+}
+
+message AddRequest{
+	Customer customer=1;
+}
+
+message ShowResponse{
+	string message=1;
+}
+
+message Customer{
+	int64 customer_id=1;
+	string first_name=2;
+	string last_name=3;
+	string email=4;
+}
+
