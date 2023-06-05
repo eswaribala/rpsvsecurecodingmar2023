@@ -12,3 +12,4 @@ var grpcChannel = GrpcChannel.ForAddress("https://localhost:7283");
 var client = new Greeter.GreeterClient(grpcChannel);
 var response = await client.SayHelloAsync(data);
 Console.WriteLine(response.Message);
+Console.ReadKey();
