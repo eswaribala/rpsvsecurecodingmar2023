@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+    </head>
+    <body>
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+            @Html.AntiForgeryToken()
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">User Name</label>
+                    </td>
+                    <td>
+                    <input type="text" id="username" name="username" />
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                    <td>
+                    <input type="password" id="password" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                    <input type="button" name="submit" value="Submit"/>
+                    </td>
+                </tr>
+            </table>
+           @ViewBag.Name
+           
+            
+        </form>
+    </body>
+</html>
