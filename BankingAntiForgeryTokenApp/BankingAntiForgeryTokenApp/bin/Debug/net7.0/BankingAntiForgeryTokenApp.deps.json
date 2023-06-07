@@ -7,8 +7,39 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "BankingAntiForgeryTokenApp/1.0.0": {
+        "dependencies": {
+          "NWebsec": "6.0.0",
+          "NWebsec.AspNetCore.Core": "3.0.1"
+        },
         "runtime": {
           "BankingAntiForgeryTokenApp.dll": {}
+        }
+      },
+      "NWebsec/6.0.0": {
+        "dependencies": {
+          "NWebsec.Core": "3.0.0"
+        },
+        "runtime": {
+          "lib/net45/NWebsec.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "NWebsec.AspNetCore.Core/3.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/NWebsec.AspNetCore.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.1.0"
+          }
+        }
+      },
+      "NWebsec.Core/3.0.0": {
+        "runtime": {
+          "lib/net45/NWebsec.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
         }
       }
     }
@@ -18,6 +49,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "NWebsec/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qCoDm00RXGAmVDh/tpjygMUz9e2Vr66wcqbIh2nh0YTV8lVZvroWAjn7Ydv1HCdO09rzT/57HAgPotxkRLcKJg==",
+      "path": "nwebsec/6.0.0",
+      "hashPath": "nwebsec.6.0.0.nupkg.sha512"
+    },
+    "NWebsec.AspNetCore.Core/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHcNVbntg8c+NOVgljaVDHUwSt3JXa7oWB66NTsn2SWaq4U6SlIkBu4nLx4e1V7UiXCvrOFNgrUGx8U3cTea8g==",
+      "path": "nwebsec.aspnetcore.core/3.0.1",
+      "hashPath": "nwebsec.aspnetcore.core.3.0.1.nupkg.sha512"
+    },
+    "NWebsec.Core/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-59p3HzAFvvsPQWtFWypd1PdySRLbP0bIhP/9fUmmwqVsOSh9fxBuRTA8z8SBHQhWjVvzmFuQe4pejQ8Io+1qyA==",
+      "path": "nwebsec.core/3.0.0",
+      "hashPath": "nwebsec.core.3.0.0.nupkg.sha512"
     }
   }
 }

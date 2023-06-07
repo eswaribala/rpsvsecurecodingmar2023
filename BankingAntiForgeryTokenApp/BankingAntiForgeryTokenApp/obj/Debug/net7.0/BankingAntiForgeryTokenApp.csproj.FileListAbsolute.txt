@@ -29,3 +29,7 @@ G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgery
 G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\obj\Debug\net7.0\BankingAntiForgeryTokenApp.pdb
 G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\obj\Debug\net7.0\BankingAntiForgeryTokenApp.genruntimeconfig.cache
 G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\obj\Debug\net7.0\ref\BankingAntiForgeryTokenApp.dll
+G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\bin\Debug\net7.0\NWebsec.AspNetCore.Core.dll
+G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\obj\Debug\net7.0\BankingAntiForgeryTokenApp.csproj.CopyComplete
+G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\bin\Debug\net7.0\NWebsec.dll
+G:\Local disk\VSecureCodingMar2023\BankingAntiForgeryTokenApp\BankingAntiForgeryTokenApp\bin\Debug\net7.0\NWebsec.Core.dll
