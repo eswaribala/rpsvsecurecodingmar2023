@@ -9,14 +9,14 @@ namespace BankingAntiForgeryTokenApp.Controllers
         {
             ViewData["Iframe"] = @"<iframe name='hdfcbank' id='hdfcbank' 
 width='200' height='200' src='/Home/Privacy' ></iframe>";
-            return View();
+            return RedirectToPage("/Home/Index");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Index(string userName, string password)
         {
             ViewBag.Name = string.Format("Name: {0} {1}", userName, password);
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Home/Index");
         }
     }
 }
