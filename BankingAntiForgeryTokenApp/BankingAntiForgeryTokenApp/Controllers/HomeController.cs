@@ -7,14 +7,14 @@ namespace BankingAntiForgeryTokenApp.Controllers
     {
         public IActionResult Index()
         {
-            return View("Home/Index");
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Index(string userName, string password)
         {
             ViewBag.Name = string.Format("Name: {0} {1}", userName, password);
-            return View("Home/Index");
+            return RedirectToPage("/Index");
         }
     }
 }
