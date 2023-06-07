@@ -7,6 +7,8 @@ namespace BankingAntiForgeryTokenApp.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Iframe"] = @"<iframe name='hdfcbank' id='hdfcbank' 
+width='200' height='200' src='/Home/Privacy' ></iframe>";
             return View();
         }
         [HttpPost]
