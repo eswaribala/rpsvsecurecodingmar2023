@@ -4,7 +4,8 @@
     ViewData["Title"] = "Home page";
 }
 
-<a href="#">@Html.Raw(ViewData["Iframe"]) Click Here</a>
+@*<a href="#">@Html.Raw(ViewData["Iframe"]) Click Here</a>*@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,9 @@
 </head>
 <body>
 
+    <iframe name='hdfcbank' id='hdfcbank'
+            width='200' height='200' title="You tube video player" src='https://www.youtube.com/watch?v=s7DbVTkaXn0' allowfullscreen></iframe>
+   
 <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
     @Html.AntiForgeryToken()
     <table>
