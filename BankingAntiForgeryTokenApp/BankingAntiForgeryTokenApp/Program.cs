@@ -15,7 +15,7 @@ if (!app.Environment.IsDevelopment())
 //clickjacking
 app.Use(async (context, next) => {
 context.Response.Headers.Add("X-Frame-Options", "DENY"); 
-context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN"); 
+context.Response.Headers.Add("X-Frame-Options-Same-Origin", "SAMEORIGIN"); 
    await next();});
 
 
