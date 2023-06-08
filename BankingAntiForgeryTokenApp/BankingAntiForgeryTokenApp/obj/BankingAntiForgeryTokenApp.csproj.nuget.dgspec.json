@@ -48,10 +48,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "NWebsec": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
             "NWebsec.AspNetCore.Core": {
               "target": "Package",
               "version": "[3.0.1, )"

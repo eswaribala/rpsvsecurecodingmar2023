@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "NWebsec/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "NWebsec.Core": "3.0.0"
-        },
-        "compile": {
-          "lib/net45/NWebsec.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/NWebsec.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "NWebsec.AspNetCore.Core/3.0.1": {
         "type": "package",
         "compile": {
@@ -33,38 +17,10 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "NWebsec.Core/3.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/NWebsec.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/NWebsec.Core.dll": {
-            "related": ".xml"
-          }
-        }
       }
     }
   },
   "libraries": {
-    "NWebsec/6.0.0": {
-      "sha512": "qCoDm00RXGAmVDh/tpjygMUz9e2Vr66wcqbIh2nh0YTV8lVZvroWAjn7Ydv1HCdO09rzT/57HAgPotxkRLcKJg==",
-      "type": "package",
-      "path": "nwebsec/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/NWebsecConfig/HttpHeaderSecurityModuleConfig.xsd",
-        "content/web.config.transform",
-        "lib/net45/NWebsec.dll",
-        "lib/net45/NWebsec.xml",
-        "nwebsec.6.0.0.nupkg.sha512",
-        "nwebsec.nuspec"
-      ]
-    },
     "NWebsec.AspNetCore.Core/3.0.1": {
       "sha512": "rHcNVbntg8c+NOVgljaVDHUwSt3JXa7oWB66NTsn2SWaq4U6SlIkBu4nLx4e1V7UiXCvrOFNgrUGx8U3cTea8g==",
       "type": "package",
@@ -77,24 +33,10 @@
         "nwebsec.aspnetcore.core.3.0.1.nupkg.sha512",
         "nwebsec.aspnetcore.core.nuspec"
       ]
-    },
-    "NWebsec.Core/3.0.0": {
-      "sha512": "59p3HzAFvvsPQWtFWypd1PdySRLbP0bIhP/9fUmmwqVsOSh9fxBuRTA8z8SBHQhWjVvzmFuQe4pejQ8Io+1qyA==",
-      "type": "package",
-      "path": "nwebsec.core/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/NWebsec.Core.dll",
-        "lib/net45/NWebsec.Core.xml",
-        "nwebsec.core.3.0.0.nupkg.sha512",
-        "nwebsec.core.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "NWebsec >= 6.0.0",
       "NWebsec.AspNetCore.Core >= 3.0.1"
     ]
   },
@@ -147,10 +89,6 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "NWebsec": {
-            "target": "Package",
-            "version": "[6.0.0, )"
-          },
           "NWebsec.AspNetCore.Core": {
             "target": "Package",
             "version": "[3.0.1, )"
@@ -178,27 +116,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'NWebsec 6.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "NWebsec",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'NWebsec.Core 3.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "NWebsec.Core",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }
