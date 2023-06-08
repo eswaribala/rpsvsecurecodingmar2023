@@ -13,10 +13,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 //clickjacking
-app.Use(async (context, next) => {
-context.Response.Headers.Add("X-Frame-Options", "DENY"); 
-context.Response.Headers.Add("X-Frame-Options-Same-Origin", "SAMEORIGIN"); 
-   await next();});
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("X-Frame-Options", "DENY");
+    context.Response.Headers.Add("X-Frame-Options-Same-Origin", "SAMEORIGIN");
+    await next();
+});
 
 
 app.UseHttpsRedirection();

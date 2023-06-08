@@ -20,12 +20,8 @@
 </head>
 <body>
 <!--Click Jacking-->
-    <iframe name='hdfcbank' id='hdfcbank'
-            width='200' height='200' title="You tube video player" src='https://www.youtube.com/watch?v=s7DbVTkaXn0' allowfullscreen></iframe>
-
-
-    <video type="video/ogg" src="https://www.youtube.com/watch?v=s7DbVTkaXn0" autoplay controls>
-    </video>
+    <p>Website is vulnerable to clickjacking!</p>
+    <iframe src="http://localhost:7479/" width="500" height="500"></iframe>
 <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
     @Html.AntiForgeryToken()
     <table>
