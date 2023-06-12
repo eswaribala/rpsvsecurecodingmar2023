@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Xy/ispMhQ9qbe5LvUruMCOjn6bMUJAh4+GsA1PEzwLs=",
+  "Source": "RateLimitingBankAPI",
+  "BasePath": "_content/RateLimitingBankAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
