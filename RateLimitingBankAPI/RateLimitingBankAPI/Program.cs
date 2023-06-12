@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RateLimitingBankAPI.Contexts;
+using RateLimitingBankAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -10,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CustomerContext>(options => options
 .UseSqlServer(configuration.GetConnectionString("DbConn")));
-
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
