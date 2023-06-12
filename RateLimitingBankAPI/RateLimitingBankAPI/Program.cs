@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RateLimitingBankAPI.Contexts;
+using RateLimitingBankAPI.Endpoints;
 using RateLimitingBankAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +43,10 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+app.MapGroup("/customers/v1")
+        .MapCustomersApiV1()
+        .WithTags("Customers");
 
 app.Run();
 
