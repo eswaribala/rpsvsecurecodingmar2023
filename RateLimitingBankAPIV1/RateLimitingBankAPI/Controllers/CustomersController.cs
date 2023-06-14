@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using RateLimitingBankAPI.Models;
 using RateLimitingBankAPI.Services;
 
@@ -27,8 +28,10 @@ namespace BankingAPI.Controllers
         }
 
         // GET: api/<CustomersController>
+
         [HttpGet]
         [MapToApiVersion("2.0")]
+        [EnableRateLimiting("fixed")]
         public Task<IEnumerable<Customer>> Get()
         {
            

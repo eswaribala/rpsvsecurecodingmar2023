@@ -76,13 +76,13 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
-
+app.MapControllers();
 //app.MapGroup("/customers/v1")
 //        .MapCustomersApiV1()
 //        .WithTags("Customers");
-
-app.MapControllers().RequireRateLimiting("fixed");
-
+//app.MapGroup("api/v2.0/Customers").RequireRateLimiting("fixed");
+//app.MapControllers().RequireRateLimiting("fixed");
+//app.MapControllers().RequireRateLimiting(Policy.FixedWindowPolicy.ToString());
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
