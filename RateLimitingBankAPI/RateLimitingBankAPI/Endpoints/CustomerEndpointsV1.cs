@@ -8,7 +8,7 @@ namespace RateLimitingBankAPI.Endpoints
         public static RouteGroupBuilder MapCustomersApiV1(this RouteGroupBuilder group)
         {
             // Map to NBomber GlobalScenario
-            group.MapGet("/", GetAllCustomers);
+            group.MapGet("/", GetAllCustomers).RequireRateLimiting(Policy.FixedWindowPolicy.ToString());
 
             // Map to NBomber ConcurrencyScenario
             group.MapGet("/{id}", GetCustomer);

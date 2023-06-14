@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RateLimitingBankAPI.Contexts;
 using RateLimitingBankAPI.Endpoints;
+using RateLimitingBankAPI.Extentions;
 using RateLimitingBankAPI.Services;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -12,7 +15,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CustomerContext>(options => options
 .UseSqlServer(configuration.GetConnectionString("DbConn")));
+builder.Services.AddRateLimiterExtension(builder.Configuration);
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +30,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+
+// Add Microsoft.AspNetCore.RateLimiting middleware
+app.UseRateLimiter();
+// Configure the HTTP request pipeline.
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -47,6 +58,7 @@ app.MapGet("/weatherforecast", () =>
 app.MapGroup("/customers/v1")
         .MapCustomersApiV1()
         .WithTags("Customers");
+       
 
 app.Run();
 
