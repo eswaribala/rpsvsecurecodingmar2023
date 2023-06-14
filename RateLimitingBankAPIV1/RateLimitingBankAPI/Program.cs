@@ -32,22 +32,6 @@ builder.Services.AddRateLimiter(_ => _
        // options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
         options.QueueLimit = 0;
     }));
-//builder.Services.AddRateLimiter(options =>
-//{
-//    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
-//    {
-//        return RateLimitPartition.GetFixedWindowLimiter(partitionKey: httpContext.Request.Headers.Host.ToString(), partition => new FixedWindowRateLimiterOptions
-//        {
-//            PermitLimit=2,
-//            AutoReplenishment=true,
-//            Window=TimeSpan.FromSeconds(10)
-//        });
-//    });
-//    options.OnRejected = async (context, token) =>
-//    {
-//        await context.HttpContext.Response.WriteAsync("Too Many Requests. Please Try Later ...", cancellationToken: token);
-//    };
-//});
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CustomerContext>(options => options
 .UseSqlServer(configuration.GetConnectionString("DbConn")));
