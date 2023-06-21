@@ -62,3 +62,7 @@ G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Serilog.
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Audit.NET.dll
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\author.dtd
 G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\author.xml
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Microsoft.Extensions.Http.Polly.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Polly.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Polly.Contrib.WaitAndRetry.dll
+G:\Local disk\VSecureCodingMar2023\BankAPIV7\BankAPIV7\bin\Debug\net7.0\Polly.Extensions.Http.dll

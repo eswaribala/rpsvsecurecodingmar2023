@@ -1,4 +1,4 @@
-namespace BankAPIV7
+namespace TransactionAPI
 {
     public class WeatherForecast
     {

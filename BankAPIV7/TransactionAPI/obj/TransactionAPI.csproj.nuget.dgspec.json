@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\BankAPIV7\\BankAPIV7.csproj": {}
+    "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\TransactionAPI\\TransactionAPI.csproj": {}
   },
   "projects": {
-    "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\BankAPIV7\\BankAPIV7.csproj": {
+    "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\TransactionAPI\\TransactionAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\BankAPIV7\\BankAPIV7.csproj",
-        "projectName": "BankAPIV7",
-        "projectPath": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\BankAPIV7\\BankAPIV7.csproj",
+        "projectUniqueName": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\TransactionAPI\\TransactionAPI.csproj",
+        "projectName": "TransactionAPI",
+        "projectPath": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\TransactionAPI\\TransactionAPI.csproj",
         "packagesPath": "C:\\Users\\Balasubramaniam\\.nuget\\packages\\",
-        "outputPath": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\BankAPIV7\\obj\\",
+        "outputPath": "G:\\Local disk\\VSecureCodingMar2023\\BankAPIV7\\TransactionAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -48,65 +48,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Audit.NET": {
-              "target": "Package",
-              "version": "[21.0.0, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.5, )"
-            },
-            "Microsoft.Extensions.Http.Polly": {
-              "target": "Package",
-              "version": "[7.0.7, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.17.2, )"
             },
-            "Polly": {
-              "target": "Package",
-              "version": "[7.2.4, )"
-            },
-            "Polly.Contrib.WaitAndRetry": {
-              "target": "Package",
-              "version": "[1.1.1, )"
-            },
-            "Polly.Extensions.Http": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[2.12.0, )"
-            },
-            "Serilog.AspNetCore": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Serilog.Enrichers.AspNetCore": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "Serilog.Enrichers.Thread": {
-              "target": "Package",
-              "version": "[3.1.0, )"
-            },
-            "Serilog.Sinks.Elasticsearch": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.DirectoryServices": {
-              "target": "Package",
-              "version": "[7.0.1, )"
             }
           },
           "imports": [

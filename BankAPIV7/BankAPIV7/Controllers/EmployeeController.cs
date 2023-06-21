@@ -8,21 +8,29 @@ namespace BankAPIV7.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly IEmployeeService employeeService;
         public IList<Employee> EmployeeList { get; set; }
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, IHttpClientFactory httpClientFactory)
         {
             this.employeeService = employeeService;
             this.EmployeeList = new List<Employee>();
+            _httpClientFactory = httpClientFactory;
         }
 
 
         [HttpGet("search")]
-         public IActionResult Search(string input) { 
-        
-           this.EmployeeList=this.employeeService.Search(input);
+         public IActionResult Search(string input) {
+
+            //inter service communication
+            var httpClient = _httpClientFactory.CreateClient("WeatherClient");
+
+            var response = httpClient.GetAsync("WeatherForecast").Result;
+            var Data = response.Content.ReadAsStringAsync().Result.ToString();
+            Console.WriteLine(Data);
+
+            this.EmployeeList=this.employeeService.Search(input);
             return new ObjectResult(this.EmployeeList);
         }
     }
