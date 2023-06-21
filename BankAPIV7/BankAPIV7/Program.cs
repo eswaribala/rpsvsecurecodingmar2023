@@ -16,22 +16,22 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.Configure<LdapConfig>(configuration.GetSection("Ldap"));
 builder.Services.AddScoped<ILdapService, LdapService>();
-Log.Logger = new LoggerConfiguration()
-    .Enrich.FromLogContext()
+//Log.Logger = new LoggerConfiguration()
+//    .Enrich.FromLogContext()
 
-    .WriteTo.Debug()
-    .WriteTo.Console()
-    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new
-        Uri(configuration["ElasticConfiguration:Uri"]))
-    {
-        AutoRegisterTemplate = true,
-        IndexFormat = $"VSecureIndex-{DateTime.UtcNow:yyyy-MM}"
-    })
-    .Enrich.WithProperty("Environment", environment)
-    .ReadFrom.Configuration(configuration)
-    .CreateLogger();
+//    .WriteTo.Debug()
+//    .WriteTo.Console()
+//    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new
+//        Uri(configuration["ElasticConfiguration:Uri"]))
+//    {
+//        AutoRegisterTemplate = true,
+//        IndexFormat = $"VSecureIndex-{DateTime.UtcNow:yyyy-MM}"
+//    })
+//    .Enrich.WithProperty("Environment", environment)
+//    .ReadFrom.Configuration(configuration)
+//    .CreateLogger();
 
-builder.Host.UseSerilog();
+//builder.Host.UseSerilog();
 
 var app = builder.Build();
 
