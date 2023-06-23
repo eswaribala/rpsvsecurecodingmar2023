@@ -1,6 +1,8 @@
 using BankAPIV7.Services;
 using Microsoft.Extensions.Configuration;
 using Polly;
+using Polly.CircuitBreaker;
+using Polly.Retry;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
 
@@ -45,7 +47,10 @@ builder.Services.AddHttpClient("WeatherClient", c =>
                 TimeSpan.FromSeconds(5),
                 TimeSpan.FromSeconds(15),
                  TimeSpan.FromSeconds(15)
-            }));
+            }))
+.AddTransientHttpErrorPolicy(policy => 
+policy.FallbackAsync(new System.Net.Http.HttpResponseMessage
+(System.Net.HttpStatusCode.RequestTimeout)));
 
 
 //Circuit Breaker Policy
